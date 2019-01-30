@@ -1,0 +1,22 @@
+# ex_project
+package operator;
+
+public class OperationEx3 {
+
+	public static void main(String[] args) {
+		int num1 = 10;
+		int i = 2;
+		
+		boolean value = ((num1 = num1 +10)< 10) && ((i = i+2)< 10); //논리곱&&는 양쪽 두개다 참일경우 참 하나라도 아닐경우 거짓
+		System.out.println(value);                                  //i = i+2문장은 앞의 문장이 거짓임으로 실행되지 않음
+		System.out.println(num1);
+		System.out.println(i);                                      //문장이 실행되지 않아 값이 그대로
+		
+		value = ((num1 = num1 +10) > 10) || ((i = i + 2) < 10); //논리합||는 하나라도 하나라도 참일경우 참
+		System.out.println(value);                           	//앞의것이 참임으로 뒤에것은 실행되지않음	
+		System.out.println(num1);
+		System.out.println(i);                                  //문장이 실행되지 않아 값이 그대로
+
+	}
+
+}
