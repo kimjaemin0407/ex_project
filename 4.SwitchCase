@@ -1,0 +1,25 @@
+# ex_project
+package ifexample;
+
+public class SwitchCase {
+
+	public static void main(String[] args) {
+		int ranking = 2;
+		char madalColer;
+		
+		switch(ranking) {
+		case 1 : madalColer = 'G';
+			break;
+		case 2 : madalColer = 'S';
+			break;
+		case 3 : madalColer = 'B';
+			break;
+		default:
+			madalColer = 'A';
+		}
+		
+		System.out.println(ranking + "등의 메달은" + madalColer + "입니다.");
+
+	}
+
+}
