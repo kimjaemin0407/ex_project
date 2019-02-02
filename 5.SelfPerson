@@ -1,0 +1,10 @@
+# ex_project
+package classpart;
+
+public class SelfPerson {
+	int age;
+	String name;
+	boolean isMarried;
+	int NumberOfChildren;
+
+}
