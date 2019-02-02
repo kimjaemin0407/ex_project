@@ -1,0 +1,26 @@
+# ex_project
+package classpart;
+
+public class shppingMall2 {
+
+	public static void main(String[] args) {
+		shoppingMall shop = new shoppingMall();
+		
+		shop.number = 201803120001L;
+		shop.ID = "abc123";
+		shop.day = "2018년 3월 12일";
+		shop.name = "홍길동";
+		shop.itemNumber = "PD0345-12";
+		shop.address = "서울시 영등포구 여의도동 20번지";
+		
+		System.out.println(shop.number);
+		System.out.println(shop.ID);
+		System.out.println(shop.day);
+		System.out.println(shop.name);
+		System.out.println(shop.itemNumber);
+		System.out.println(shop.address);
+		
+
+	}
+
+}
