@@ -1,0 +1,15 @@
+# ex_project
+package classpart;
+
+public class Student {
+	int studentID = 10;
+	String studentName = "jaemin";
+	int grade =1;;
+	String address = "MOK-Dong";
+	
+	
+	public void showStudentInfo() {
+		System.out.println(studentID);
+	}
+
+}
