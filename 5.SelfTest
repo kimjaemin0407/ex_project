@@ -1,0 +1,36 @@
+# ex_project
+package classpart;
+
+public class SelfTest {
+
+	public static void main(String[] args) {
+		int num1 = 10;
+		int num2 = 20;
+		
+		int result = A(num1,num2);
+		System.out.println("A함수의 값은 " + result + "입니다.");
+		
+		result = B(num1,num2);
+		System.out.println("B함수의 값은" + result + "입니다.");
+		
+		result = C(num1, num2);
+		System.out.println("C함수의 값은" + result + "입니다.");
+
+	}
+	
+	public static int A(int A1, int A2) {
+		int result = A1 + A2;
+		return result;
+	}
+	
+	public static int B(int B1, int B2) {
+		int result = B1 - B2;
+		return result;
+	}
+	
+	public static int C(int C1, int C2) {
+		int result = C1 * C2;
+		return result;
+	}
+
+}
