@@ -1,0 +1,12 @@
+# ex_project
+package classpart;
+
+public class shoppingMall {
+	long number;
+	String ID;
+	String day;
+	String name;
+	String itemNumber;
+	String address;
+
+}
