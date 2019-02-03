@@ -1,0 +1,15 @@
+# ex_project
+package constructor;
+
+public class PersonTest {
+
+	public static void main(String[] args) {
+		Person personkim = new Person();
+		personkim.name="김재민";
+		personkim.height = 67F;
+		personkim.weight = 172F;          //이렇게 다 써야하는 것을 매개변수가 있는 사용자를 사용하면 간략해진다     
+		
+		Person personLee = new Person("이순신", 100, 80);
+	}
+
+}
