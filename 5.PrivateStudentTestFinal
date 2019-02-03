@@ -1,0 +1,17 @@
+# ex_project
+package hiding;
+
+public class PrivateStudentTestFinal {
+
+	public static void main(String[] args) {
+		PrivateStudent Studentkim = new PrivateStudent();
+		//Studentkim.studentName = "김재민";  // PrivateStudent의 Private String name때문에 오류가 난다
+		
+		Studentkim.setStudentName("김재민");
+		
+		System.out.println(Studentkim.getStudentName());
+
+	}
+
+}
+
