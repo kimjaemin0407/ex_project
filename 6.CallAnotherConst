@@ -1,0 +1,28 @@
+# ex_project
+package thisex;
+
+class Person{
+	String name;
+	int age;
+	
+	Person(){
+		this("김재민", 26);
+	}
+	
+	Person(String name, int age){
+		this.name = name;
+		this.age = age;
+	}
+}
+
+public class CallAnotherConst {
+
+	public static void main(String[] args) {
+		Person personkim = new Person();
+		System.out.println(personkim.name);
+		System.out.println(personkim.age);
+		
+
+	}
+
+}
