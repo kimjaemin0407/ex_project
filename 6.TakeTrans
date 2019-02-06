@@ -1,0 +1,22 @@
+# ex_project
+package cooperation;
+
+public class TakeTrans {
+
+	public static void main(String[] args) {
+		Student studentkim = new Student("kim", 5000);
+		Student studentsu = new Student("su", 10000);
+		
+		Bus bus100 = new Bus(100);
+		studentkim.takeBus(bus100);
+		studentkim.showInfo();
+		bus100.showInfo();
+		
+		Subway subway5 = new Subway("5호선");
+		studentsu.takeSubway(subway5);
+		studentsu.showInfo();
+		subway5.showInfo();
+
+	}
+
+}
