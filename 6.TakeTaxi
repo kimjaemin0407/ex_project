@@ -1,0 +1,17 @@
+# ex_project
+package test;
+
+public class TakeTaxi {
+
+	public static void main(String[] args) {
+		Edward edward = new Edward("kim", 30000);
+		
+		EdwardTaxi Taxi5288 = new EdwardTaxi(5288);
+		edward.takeTaxi(Taxi5288);
+		edward.showInfo();
+		Taxi5288.showInfo();
+		
+
+	}
+
+}
