@@ -1,0 +1,19 @@
+# ex_project
+package test;
+
+public class EdwardTaxi {
+	int taxiNumer;
+	int money;
+	
+	public EdwardTaxi(int taxiNumber) {
+		this.taxiNumer = taxiNumber;
+	}
+	public void take(int money) {
+		this.money += money;
+	}
+	
+	public void showInfo() {
+		System.out.println("택시" + taxiNumer + "번의 수입은" + money + "입니다.");
+	}
+
+}
