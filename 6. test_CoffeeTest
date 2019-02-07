@@ -1,0 +1,23 @@
+# ex_project
+package test;
+
+public class CoffeeTest {
+
+	public static void main(String[] args) {
+		Person personkim = new Person("김", 10000);
+		Person personsu = new Person("수", 20000);
+		
+		StarCoffee scoffee = new StarCoffee("아메리카노");
+		personkim.takeStar(scoffee);;
+		personkim.showInfo();
+		scoffee.showInfo();
+		
+		BeenCoffee bcoffee = new BeenCoffee("라떼");
+		personsu.takeBeen(bcoffee);
+		personsu.showInfo();
+		bcoffee.showInfo();
+		
+
+	}
+
+}
