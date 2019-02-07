@@ -1,0 +1,19 @@
+# ex_project
+package staticex;
+
+public class StudentTest2 {
+
+	public static void main(String[] args) {
+		Student1 studentkim = new Student1();
+		studentkim.setStudentName("김재민");
+		System.out.println(studentkim.serialNum); //student1.serialNum으로도 가능
+		System.out.println(studentkim.studentName + studentkim.serialNum);
+		
+		Student1 studentsu = new Student1();
+		studentsu.setStudentName("수");
+		System.out.println(studentsu.serialNum); //student1.serialNum으로도 가능
+		System.out.println(studentsu.studentName + studentsu.serialNum);
+
+	}
+
+}
