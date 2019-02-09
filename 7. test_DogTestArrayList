@@ -1,0 +1,26 @@
+# ex_project
+package seven_test;
+
+import java.util.ArrayList;
+
+public class DogTestArrayList {
+
+	public static void main(String[] args) {
+		ArrayList<Dog> list = new ArrayList<Dog>();
+		
+		list.add(new Dog("A","AA"));
+		list.add(new Dog("B","BB"));
+		list.add(new Dog("C","CC"));
+		list.add(new Dog("D","DD"));
+		list.add(new Dog("E","EE"));
+		
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).showInfo());
+		}
+		
+		for(Dog D : list) {
+			System.out.println(D.showInfo());
+		}
+	}
+
+}
