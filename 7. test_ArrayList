@@ -1,0 +1,21 @@
+# ex_project
+package seven_test;
+import java.util.ArrayList;
+
+public class StudentArrayList {
+
+	public static void main(String[] args) {
+		ArrayList<Student> student1 = new ArrayList<Student>();
+		
+		student1.add(new Student("a", 1001));
+		student1.add(new Student("b", 1002));
+		student1.add(new Student("c", 1003));
+		
+		for(Student S : student1) {
+			S.showInfo();
+		}
+
+
+	}
+
+}
