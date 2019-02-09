@@ -1,0 +1,21 @@
+# ex_project
+package inheritance;
+
+public class CustomerTest1 {
+
+	public static void main(String[] args) {
+		Customer customerkim = new Customer();
+		customerkim.setCustomerID(10000);
+		customerkim.setCustomerName("김");
+		customerkim.bonusPoint = 1000;
+		System.out.println(customerkim.showInfo());
+		
+		VIPCustomer customermin = new VIPCustomer();
+		customermin.setCustomerID(100001);
+		customermin.setCustomerName("민");
+		customermin.bonusPoint = 10000;
+		System.out.println(customermin.showInfo());
+
+	}
+
+}
