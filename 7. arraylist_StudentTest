@@ -1,0 +1,21 @@
+# ex_project
+package arraylist;
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		Student studentkim = new Student(1001, "김");
+		studentkim.addSubject("국어", 90);
+		studentkim.addSubject("수학", 90);
+		
+		Student studentsu = new Student(1002, "수");
+		studentsu.addSubject("국어", 80);
+		studentsu.addSubject("수학", 70);
+		
+		studentkim.showInfo();
+		System.out.println();
+		studentsu.showInfo();
+
+	}
+
+}
