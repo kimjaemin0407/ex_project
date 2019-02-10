@@ -1,0 +1,31 @@
+# ex_project
+package polymorphism;
+
+public class CustomerTest {
+
+	public static void main(String[] args) {
+		Customer customerLee = new Customer();
+		customerLee.setCustomerID(10010);
+		customerLee.setCustomerName("이순신");
+		customerLee.bonusPoint = 1000;
+		
+		System.out.println(customerLee.showInfo());
+		
+		Customer customerkim = new VIPCustomer(10020, "김", 12345);
+		customerkim.bonusPoint = 1000;
+		
+		System.out.println(customerkim.showInfo());
+		
+		int price = 10000;
+		int leePrice = customerLee.calcPrice(price);
+		int kimPrice = customerkim.calcPrice(price);
+		
+		System.out.println(customerLee.getCustomerName() + ", " + leePrice + "지불");
+		System.out.println(customerLee.showInfo());
+		
+		System.out.println(customerkim.getCustomerName() + ", " + kimPrice + "지불");
+		System.out.println(customerkim.showInfo());
+
+	}
+
+}
