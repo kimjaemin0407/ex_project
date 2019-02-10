@@ -1,0 +1,39 @@
+# ex_project
+package polymorphism;
+
+import java.util.ArrayList;
+
+public class CustomerTest2 {
+
+	public static void main(String[] args) {
+		ArrayList<Customer> customerList = new ArrayList<Customer>();
+		
+		Customer customerkim = new Customer(10010, "김");
+		Customer customerjae = new Customer(10020, "재");
+		Customer customermin = new GoldCustomer(10030, "민");
+		Customer customersu = new GoldCustomer(10040, "수");
+		Customer customerjin = new VIPCustomer(10050, "진", 12345);
+		
+		customerList.add(customerkim);
+		customerList.add(customerjae);
+		customerList.add(customermin);
+		customerList.add(customersu);
+		customerList.add(customerjin);
+		
+		System.out.println("고객 정보 출력");
+		for(Customer customer : customerList) {
+			System.out.println(customer.showInfo());
+		}
+		
+		System.out.println("할인율과 보너스 포인트 계산");
+		int price = 10000;
+		for(Customer customer : customerList) {
+			int cost = customer.calcPrice(price);
+			System.out.println(customer.getCustomerName() + ", " + cost);
+			System.out.println(customer.bonusPoint);
+		}
+		
+
+	}
+
+}
