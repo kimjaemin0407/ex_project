@@ -1,0 +1,18 @@
+# ex_project
+package inheritance;
+
+public class OverridingTest1 {
+
+	public static void main(String[] args) {
+		Customer customerk = new Customer(10010, "김");
+		customerk.bonusPoint = 1000;
+		
+		VIPCustomer customers = new VIPCustomer(10020, "수", 12345 );
+		customers.bonusPoint=10000;
+		
+		int price = 10000;
+		System.out.println(customerk.getCustomerName() + ", " + customerk.calcPrice(price));
+		System.out.println(customers.getCustomerName() + ", " + customers.calcPrice(price));
+	}
+
+}
