@@ -1,0 +1,17 @@
+# ex_project
+package template;
+
+public class CarTest {
+
+	public static void main(String[] args) {
+		System.out.println("==자율 주행 차 ==");
+		Car mycar = new AICar();
+		mycar.run();
+		
+		System.out.println("==일반 차 ==");
+		Car mycar2 = new ManualCar();
+		mycar2.run();
+
+	}
+
+}
