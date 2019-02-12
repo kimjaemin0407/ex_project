@@ -1,0 +1,9 @@
+# ex_project
+package nine_test;
+
+public abstract class Car {
+	public abstract void run();
+	public abstract void refuel();
+	public abstract void stop();
+
+}
