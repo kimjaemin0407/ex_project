@@ -1,0 +1,13 @@
+# ex_project
+package abstractex;
+
+public class ComputerTest {
+
+	public static void main(String[] args) {
+		//Computer c1 = new Computer(); 추상 메서드는 인스턴스를 생성할 수 없다. 수행할 코드가 없기때문
+		Computer c2 = new DeskTop();
+		//Computer c3 = new NoteBook(); 
+		Computer c4 = new MyNoteBook();
+	}
+}
+			
