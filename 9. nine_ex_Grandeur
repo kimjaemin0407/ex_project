@@ -1,0 +1,30 @@
+# ex_project
+package nine_ex;
+
+public class Grandeur extends Car{
+
+	@Override
+	public void start() {
+		System.out.println("그랜져 시동을 건다");
+		
+	}
+
+	@Override
+	public void drive() {
+		System.out.println("그랜져 달린다");
+		
+	}
+
+	@Override
+	public void stop() {
+		System.out.println("그랜져 멈춘다");
+		
+	}
+
+	@Override
+	public void turnoff() {
+		System.out.println("그랜져 시동을 끈다");
+		
+	}
+
+}
