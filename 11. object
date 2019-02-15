@@ -1,0 +1,195 @@
+# ex_project
+package object;
+
+class Book {
+	int bookNumber;
+	String bookTitle;
+	
+	Book(int bookNumber, String bookTitle){
+		this.bookNumber = bookNumber;
+		this.bookTitle = bookTitle;
+	}
+
+@Override
+public String toString() {
+
+	return bookTitle + " , " + bookNumber;
+	}
+}
+
+public class ToStringEx {
+	public static void main(String[] args) {
+		Book book1 = new Book(94, "김재민");
+		
+		System.out.println(book1);
+		System.out.println(book1.toString()); // toString()메서드로 인스턴스 정보(클래스 이름, 주소값) 보여줌
+	}										  // 하지만 위에서 toString을 재정의 해주었기에 값이 제대로 나온다
+
+}
+
+
+
+package object;
+
+class Student{
+	int studentId;
+	String studentName;
+	
+	public int hashcode() {
+		return studentId;
+	}
+	
+	public boolean equals(Object obj) {
+		if(obj instanceof Student) {
+			Student student = (Student)obj;
+			if(this.studentId == student.studentId)
+				return true;
+			else
+				return false;
+		}
+		return false; 
+	}
+	
+	public Student(int studentId, String studentName) {
+		this.studentId = studentId;
+		this.studentName = studentName;
+	}
+	
+	public String toString() {
+		return studentId + ", " + studentName;
+	}
+}
+
+public class EqualsTest {
+
+	public static void main(String[] args) {
+		Student studentKim = new Student(100, "김재민");
+		Student studentKim2 = studentKim; //주소 복사
+		Student studentMin = new Student(100, "김재민");
+		
+		if(studentKim == studentKim2)
+			System.out.println("kim과 kim2는 주소가 같다.");
+		else
+			System.out.println("kim과 kim2는 주소가 다르다");
+		
+		if(studentKim.equals(studentKim2))//equals로 비교, 주소가 동일한지 비교
+			System.out.println("kim과 kim2는 동일하다.");
+		else
+			System.out.println("kim과 kim2는 동일하지 않다.");
+		
+		
+		
+		if(studentKim == studentMin)
+			System.out.println("kim과 min는 주소가 같다.");
+		else
+			System.out.println("kim과 min는 주소가 다르다");
+		
+		if(studentKim.equals(studentMin))//equals로 비교
+			System.out.println("kim과 min는 동일하다.");
+		else
+			System.out.println("kim과 min는 동일하지 않다.");
+		
+		System.out.println("kim의 hashCode : " + studentKim.hashcode());
+		System.out.println("min의 hashCode : " + studentMin.hashcode());
+		
+		System.out.println("studentKim의 실제 주소값 :" + System.identityHashCode(studentKim));
+		System.out.println("studentMin의 실제 주소값 :" + System.identityHashCode(studentMin));
+
+	}
+
+}
+
+
+
+package object;
+
+public class StringEquals {
+
+	public static void main(String[] args) {
+		String str1 = new String("abc");
+		String str2 = new String("abc");
+		
+		System.out.println(str1 == str2);
+		System.out.println(str1.equals(str2));
+		
+		Integer i1 = new Integer(100);
+		Integer i2 = new Integer(100);
+		
+		System.out.println(i1 == i2);
+		System.out.println(i1.equals(i2));
+
+	}
+
+}
+
+
+package object;
+
+class Point{
+	int x;
+	int y;
+	
+	Point(int x, int y){
+		this.x = x;
+		this.y = y;
+	}
+	
+	public String toString() {
+		return "x = " + x + ", " + "y = " + y;
+	}
+} //원점을 의미하는 point클래스
+
+class Circle implements Cloneable{ //객체를 복제해도 된다는 의미로 Cloneable 인터페이스 선언
+	Point point;
+	int radius;
+	
+	Circle(int x, int y, int radius){
+		this.radius = radius;
+		point = new Point(x,y);
+	}
+	public String toString() {
+		return "원점은 " + point + "이고," + "반지름은" + radius + "입니다.";
+	}
+	
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone(); // clone 메서드를 사용할 때 발생할 수 있는 오류를 예외처리
+	}
+}
+
+public class ObjectCloneTest {
+
+	public static void main(String[] args) throws CloneNotSupportedException {
+		Circle circle = new Circle(10, 20, 30);
+		Circle copyCircle = (Circle)circle.clone();
+		//clone()메서드를 사용해 circle인스턴스를 copyCircle에 복제함
+		
+		System.out.println(circle);
+		System.out.println(copyCircle);
+		System.out.println(System.identityHashCode(circle));
+		System.out.println(System.identityHashCode(copyCircle));
+
+	}
+
+}
+
+
+package object;
+
+public class HashCodeTest {
+
+	public static void main(String[] args) {
+		String str1 = new String("abc");
+		String str2 = new String("abc");
+		
+		System.out.println(str1.hashCode());
+		System.out.println(str2.hashCode()); //abc문자열의 해시코드 값 출력
+		
+		Integer i1 = new Integer(100);
+		Integer i2 = new Integer(100);
+		
+		System.out.println(i1.hashCode());
+		System.out.println(i2.hashCode());
+
+	}
+
+}
