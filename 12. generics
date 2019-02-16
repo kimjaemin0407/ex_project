@@ -1,0 +1,149 @@
+# ex_project
+package generics;
+
+public abstract class Material {
+	public abstract void doPrinting();
+
+}
+
+
+
+package generics;
+
+public class Powder extends Material {
+	public void doPrinting() {
+		System.out.println("Powder 재료로 출력");
+	}
+	public String toString() {
+		return "재료는 Powder입니다.";
+	}
+
+}
+
+
+package generics;
+
+public class Plastic extends Material {
+	public void doPrinting() {
+		System.out.println("Plastic 재료로 출력");
+	}
+	public String toString() {
+		return "재료는 Plastic 입니다.";
+	}
+
+}
+
+
+package generics;
+
+public class GenericPrinter<T extends Material> {
+	private T material; //T 자료형으로 선언한 변수
+	
+	public void setMaterial(T material) {
+		this.material = material;
+	}
+	
+	public T getMaterial() { //T자료형 변수  material을 반환하는 제네릭 메서드
+		return material;
+	}
+	
+	public String toString() {
+		return material.toString();
+	}
+	public void printing() {
+		material.doPrinting();
+	}
+
+}
+
+
+package generics;
+
+public class GenericPrinterTest {
+
+	public static void main(String[] args) {
+		GenericPrinter<Powder> powderPrinter = new GenericPrinter<Powder>();
+		
+		powderPrinter.setMaterial(new Powder());
+		Powder powder = powderPrinter.getMaterial();
+		System.out.println(powderPrinter);
+		
+		GenericPrinter<Plastic> plasticPrinter = new GenericPrinter<Plastic>();
+		
+		plasticPrinter.setMaterial(new Plastic());
+		Plastic plasctic = plasticPrinter.getMaterial();
+		System.out.println(plasticPrinter);
+
+	}
+
+}
+
+
+package generics;
+
+public class GenericPrinterTest2 {
+
+	public static void main(String[] args) {
+		GenericPrinter<Powder> powderPrinter = new GenericPrinter<Powder>();
+		
+		powderPrinter.setMaterial(new Powder());
+		powderPrinter.printing();
+		
+		GenericPrinter<Plastic> plasticPrinter = new GenericPrinter<Plastic>();
+		
+		plasticPrinter.setMaterial(new Plastic());
+		plasticPrinter.printing();
+
+	}
+
+}
+
+
+
+
+
+package generics;
+
+public class Point<T, V> {
+	T x;
+	V y;
+	
+	Point(T x, V y){
+		this.x = x;
+		this.y = y;
+	}
+	
+	public T getX() {
+		return x;
+	}
+	public V getY() {
+		return y;
+	}
+
+}
+
+
+package generics;
+
+public class GenericMetod {
+	public static <T,V> double makeRectangle(Point<T, V>p1, Point<T, V>p2) {
+		double left = ((Number)p1.getX()).doubleValue();
+		double right = ((Number)p2.getX()).doubleValue();
+		double top = ((Number)p1.getY()).doubleValue();
+		double bottom = ((Number)p2.getY()).doubleValue();
+		
+		double width = right - left;
+		double height = bottom - top;
+		
+		return width*height;
+	}
+	
+	public static void main(String[] args) {
+		Point<Integer, Double> p1 = new Point<Integer, Double>(0, 0.0);
+		Point<Integer, Double> p2 = new Point<Integer, Double>(10, 10.0);
+		
+		double rect = GenericMetod.<Integer, Double>makeRectangle(p1, p2);
+		System.out.println(rect);
+	}
+
+}
